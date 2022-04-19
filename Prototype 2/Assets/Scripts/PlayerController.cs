@@ -8,7 +8,7 @@ public class PlayerController : MonoBehaviour
     public float speed = 10;
     public float xRange = 25;
 
-    public GameObject bulletPrefabs;
+    public GameObject[] bulletPrefabs;
     // Start is called before the first frame update
     void Start()
     {
@@ -32,7 +32,8 @@ public class PlayerController : MonoBehaviour
 
 		if (Input.GetKeyDown(KeyCode.Space))
 		{
-            Instantiate(bulletPrefabs,transform.position, bulletPrefabs.transform.rotation);
+            int index = Random.RandomRange(0, bulletPrefabs.Length);
+            Instantiate(bulletPrefabs[index],transform.position, bulletPrefabs[index].transform.rotation);
 		}
     }
 }
