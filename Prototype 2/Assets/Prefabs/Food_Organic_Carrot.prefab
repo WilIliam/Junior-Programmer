@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 4795038584762943462}
   - component: {fileID: 561456260049455458}
   - component: {fileID: -8234770911199519467}
+  - component: {fileID: 959596154967417344}
   m_Layer: 0
   m_Name: Food_Organic_Carrot
   m_TagString: Untagged
@@ -121,3 +122,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c32e98fbd475ff54fb76802352e090cd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!65 &959596154967417344
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4795038586182785056}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.14170074, y: 0.141707, z: 0.61012447}
+  m_Center: {x: 0, y: 0.0708535, z: -0.000000059604645}
