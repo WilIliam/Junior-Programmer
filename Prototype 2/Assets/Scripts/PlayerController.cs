@@ -7,6 +7,8 @@ public class PlayerController : MonoBehaviour
     public float hInput;
     public float speed = 10;
     public float xRange = 25;
+
+    public GameObject bulletPrefabs;
     // Start is called before the first frame update
     void Start()
     {
@@ -27,5 +29,10 @@ public class PlayerController : MonoBehaviour
 
         hInput = Input.GetAxis("Horizontal");
         transform.Translate(Vector3.right * hInput * Time.deltaTime * speed);
+
+		if (Input.GetKeyDown(KeyCode.Space))
+		{
+            Instantiate(bulletPrefabs,transform.position, bulletPrefabs.transform.rotation);
+		}
     }
 }
