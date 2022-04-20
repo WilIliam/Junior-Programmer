@@ -5,6 +5,7 @@ using UnityEngine;
 public class SpawnManager : MonoBehaviour
 {
 	public GameObject spawn;
+	private PlayerController playerController;
 
 	private Vector3 spawnPos = new Vector3(25, 0, 0);
 
@@ -13,6 +14,7 @@ public class SpawnManager : MonoBehaviour
 	// Start is called before the first frame update
 	void Start()
 	{
+		playerController = GameObject.Find("Player").GetComponent<PlayerController>();
 		InvokeRepeating("SpawnObstacle", startDelay, repeatRate);
 	}
 
@@ -24,6 +26,10 @@ public class SpawnManager : MonoBehaviour
 
 	void SpawnObstacle()
 	{
-		Instantiate(spawn, spawnPos, spawn.transform.transform.rotation);
+		if (playerController.gameOver == false)
+		{
+			Instantiate(spawn, spawnPos, spawn.transform.transform.rotation);
+
+		}
 	}
 }
