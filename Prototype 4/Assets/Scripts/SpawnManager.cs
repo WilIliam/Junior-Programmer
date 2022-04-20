@@ -30,11 +30,11 @@ public class SpawnManager : MonoBehaviour
 
 	}
 
+	
 
 	#endregion
 
 	#region Class
-
 
 	private Vector3 GenerateSpawnPosition()
 	{
@@ -45,5 +45,6 @@ public class SpawnManager : MonoBehaviour
 
 		return randomPos;
 	}
+
 	#endregion
 }
