@@ -12,9 +12,9 @@ GameObject:
   - component: {fileID: 4795038586179574232}
   - component: {fileID: 4795038586180621922}
   - component: {fileID: 4795038584762943462}
-  - component: {fileID: 561456260049455458}
-  - component: {fileID: -8234770911199519467}
   - component: {fileID: 959596154967417344}
+  - component: {fileID: 1689483087627699337}
+  - component: {fileID: 3536641851471960677}
   m_Layer: 0
   m_Name: Food_Organic_Carrot
   m_TagString: Untagged
@@ -98,30 +98,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 70
---- !u!114 &561456260049455458
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4795038586182785056}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b5a5a480180725d47adb64f1179c23ec, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &-8234770911199519467
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4795038586182785056}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c32e98fbd475ff54fb76802352e090cd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!65 &959596154967417344
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -135,3 +111,27 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.14170074, y: 0.141707, z: 0.61012447}
   m_Center: {x: 0, y: 0.0708535, z: -0.000000059604645}
+--- !u!114 &1689483087627699337
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4795038586182785056}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 81e62e9a8a22fac478a927ce940e28f7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &3536641851471960677
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4795038586182785056}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2c52ee72091692143869a36cdefe1fd7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

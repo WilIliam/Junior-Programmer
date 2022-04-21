@@ -1667,7 +1667,6 @@ GameObject:
   m_Component:
   - component: {fileID: 4476874967996975370}
   - component: {fileID: 4476874968002104552}
-  - component: {fileID: 3731473386914341324}
   m_Layer: 0
   m_Name: SA_Animals_Cow_White
   m_TagString: Untagged
@@ -1785,18 +1784,6 @@ SkinnedMeshRenderer:
     m_Center: {x: 0, y: -7.0392914, z: 19.432642}
     m_Extent: {x: 5.5862083, y: 16.289497, z: 24.204412}
   m_DirtyAABB: 0
---- !u!114 &3731473386914341324
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4476874967996845378}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b5a5a480180725d47adb64f1179c23ec, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &4476874967996845628
 GameObject:
   m_ObjectHideFlags: 0
@@ -1838,9 +1825,9 @@ GameObject:
   - component: {fileID: 4476874967997065078}
   - component: {fileID: 4476874968006237306}
   - component: {fileID: 4476874967450609909}
-  - component: {fileID: 412899278850682126}
   - component: {fileID: -8329949988078909797}
   - component: {fileID: -1833662661927190900}
+  - component: {fileID: -1363777251381583170}
   m_Layer: 0
   m_Name: Animal_Cow_White
   m_TagString: Untagged
@@ -1895,18 +1882,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 40
---- !u!114 &412899278850682126
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4476874967996846426}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b5a5a480180725d47adb64f1179c23ec, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!65 &-8329949988078909797
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1929,7 +1904,19 @@ MonoBehaviour:
   m_GameObject: {fileID: 4476874967996846426}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c32e98fbd475ff54fb76802352e090cd, type: 3}
+  m_Script: {fileID: 11500000, guid: 81e62e9a8a22fac478a927ce940e28f7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &-1363777251381583170
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4476874967996846426}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2c52ee72091692143869a36cdefe1fd7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &4476874967996846538
