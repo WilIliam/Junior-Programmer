@@ -535,11 +535,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 45c0e1f24e2ce4a5b9bf1f3a7499cd45, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pooledObjects:
-  - {fileID: 5898064700149467127, guid: b65ffdade9a3c354982f4a4592691a62, type: 3}
-  - {fileID: 4795038586182785056, guid: 6f39cce766306f84dab1d0b4ff52e755, type: 3}
-  - {fileID: 3493243088005015529, guid: 66db44e40e565ca44a72700ddf8dc5b0, type: 3}
-  - {fileID: 2288462804490982999, guid: 7a6d72d6f5d9b4a44873c5aa5ef1b7d8, type: 3}
+  pooledObjects: []
   objectToPool: {fileID: 1153140969663106315, guid: ef0ba9d0aafb78f498317ee8124295a3, type: 3}
   amountToPool: 20
 --- !u!1 &845289989 stripped
@@ -559,7 +555,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 38e917c52987daa41af6a0305d9813c6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  projectilePrefab: {fileID: 1153140969663106315, guid: ef0ba9d0aafb78f498317ee8124295a3, type: 3}
+  projectilePrefab: {fileID: 4795038586182785056, guid: 6f39cce766306f84dab1d0b4ff52e755, type: 3}
 --- !u!1 &992285705
 GameObject:
   m_ObjectHideFlags: 0

@@ -1,54 +1,80 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class PlayerController : MonoBehaviour
 {
-    [SerializeField]
-    private float horizontalInput;
-    [SerializeField]
-    private float speed = 20.0f;
-    [SerializeField]
-    private float xRange = 20;
-    private float forwardInput;
-    //public GameObject projectilePrefab;
+	private float horizontalInput;
+	[SerializeField]
+	private float speed;
+	[SerializeField]
+	private float rpm;
+	private const float turnSpeed = 45.0f;
+	private float forwardInput;
+
+	[SerializeField]
+	private float horsePower = 0;
+	[SerializeField]
+	private GameObject centerOfMass;
+	[SerializeField]
+	private TextMeshProUGUI speedometerText;
+	[SerializeField]
+	private TextMeshProUGUI rpmText;
+	[SerializeField]
+	private List<WheelCollider> allWheels;
+	[SerializeField]
+	private int wheelsOnGround;
+
+	private Rigidbody playerRb;
+
+	private void Start()
+	{
+		playerRb = GetComponent<Rigidbody>();
+		playerRb.centerOfMass = centerOfMass.transform.position;
+	}
 
 
-    // Update is called once per frame
-    void FixedUpdate()
-    {
-        // Check for left and right bounds
-        if (transform.position.x < -xRange)
-        {
-            transform.position = new Vector3(-xRange, transform.position.y, transform.position.z);
-        }
+	// Update is called once per frame
+	void FixedUpdate()
+	{
+		horizontalInput = Input.GetAxis("Horizontal");
+		forwardInput = Input.GetAxis("Vertical");
+		//transform.Translate(Vector3.right * Time.deltaTime * speed * horizontalInput);
+		//transform.Translate(Vector3.forward * Time.deltaTime * speed * forwardInput);
 
-        if (transform.position.x > xRange)
-        {
-            transform.position = new Vector3(xRange, transform.position.y, transform.position.z);
-        }
+		if (IsOnGround())
+		{
+			playerRb.AddRelativeForce(Vector3.forward * horsePower * forwardInput);
 
-        // Player movement left to right
-        horizontalInput = Input.GetAxis("Horizontal");
-        forwardInput = Input.GetAxis("Vertical");
-        transform.Translate(Vector3.right * Time.deltaTime * speed * horizontalInput);
-        transform.Translate(Vector3.forward * Time.deltaTime * speed * forwardInput);
+			transform.Rotate(Vector3.up, Time.deltaTime * turnSpeed * horizontalInput);
 
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            // No longer necessary to Instantiate prefabs
-            // Instantiate(projectilePrefab, transform.position, projectilePrefab.transform.rotation);
+			speed = Mathf.RoundToInt(playerRb.velocity.magnitude * 2.237f);
+			speedometerText.SetText("Speed: " + speed + "km/h");
 
-            // Get an object object from the pool
-            GameObject pooledProjectile = ObjectPooler.SharedInstance.GetPooledObject();
-            if (pooledProjectile != null)
-            {
-                pooledProjectile.SetActive(true); // activate it
-                pooledProjectile.transform.position = transform.position; // position it at player
-            }
-        }
+			rpm = Mathf.Round((speed % 30) * 40);
+			rpmText.SetText("RPM: " + rpm);
+		}
+	}
 
+	bool IsOnGround()
+	{
+		wheelsOnGround = 0;
+		foreach (WheelCollider wheel in allWheels)
+		{
+			if (wheel.isGrounded)
+			{
+				wheelsOnGround++;
+			}
+		}
 
-
-    }
+		if (wheelsOnGround == 4)
+		{
+			return true;
+		}
+		else
+		{
+			return false;
+		}
+	}
 }
