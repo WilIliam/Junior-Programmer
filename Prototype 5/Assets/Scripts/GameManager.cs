@@ -5,6 +5,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class GameManager : MonoBehaviour
 {
@@ -12,6 +13,9 @@ public class GameManager : MonoBehaviour
     #region Variables
 
     public List<GameObject> targets;
+    public TextMeshProUGUI scoreText;
+
+    private int score;
 
     private float spawnRate = 1.0f;
     #endregion
@@ -22,6 +26,8 @@ public class GameManager : MonoBehaviour
     void Start()
     {
         StartCoroutine(SpawnTarget());
+        score = 0;
+        UpdateScore(0);
     }
 
     // Update is called once per frame
@@ -44,7 +50,14 @@ public class GameManager : MonoBehaviour
 
             Instantiate(targets[index]);
 
+
         }
 	}
+
+    public void UpdateScore(int scorePoint)
+	{
+        score += scorePoint;
+        scoreText.text = "Score: " + score;
+    }
     #endregion
 }

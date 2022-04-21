@@ -11,6 +11,9 @@ public class Target : MonoBehaviour
 
 	#region Variables
 
+	public int pointValue;
+	public ParticleSystem exploreP;
+
 	private Rigidbody targetRb;
 
 	private float minSpeed = 12;
@@ -18,6 +21,8 @@ public class Target : MonoBehaviour
 	private float maxTorque = 100;
 	private float xRange = 4;
 	private float ySpawnPos = 2;
+
+	private GameManager gameManager;
 	#endregion
 
 	#region Unity Mehods
@@ -26,6 +31,7 @@ public class Target : MonoBehaviour
 	void Start()
 	{
 		targetRb = GetComponent<Rigidbody>();
+		gameManager = GameObject.Find("Game Manager").GetComponent<GameManager>();
 
 		targetRb.AddForce(RandomForce(), ForceMode.Impulse);
 		targetRb.AddTorque(RandomTorque(), RandomTorque(), RandomTorque(), ForceMode.Impulse);
@@ -42,6 +48,8 @@ public class Target : MonoBehaviour
 	private void OnMouseDown()
 	{
 		Destroy(gameObject);
+		Instantiate(exploreP,transform.position,exploreP.transform.rotation);
+		gameManager.UpdateScore(pointValue);
 	}
 
 	private void OnTriggerEnter(Collider other)
