@@ -6,12 +6,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayuerController : MonoBehaviour
+public class PlayerController : MonoBehaviour
 {
 
 	#region Variables
 
-	private float speed = 10.0f;
+	private float speed = 50.0f;
 	private float zBound = 4.8f;
 	private float yBound = 10;
 
@@ -65,6 +65,22 @@ public class PlayuerController : MonoBehaviour
 		if (transform.position.y > yBound)
 		{
 			transform.position = new Vector3(transform.position.x, yBound, transform.position.z);
+		}
+	}
+
+	private void OnCollisionEnter(Collision collision)
+	{
+		if (collision.gameObject.CompareTag("Enemy"))
+		{
+			Debug.Log("collided with enemy");
+		}
+	}
+
+	private void OnTriggerEnter(Collider other)
+	{
+		if (other.gameObject.CompareTag("Powerup"))
+		{
+			Destroy(other.gameObject);
 		}
 	}
 	#endregion
