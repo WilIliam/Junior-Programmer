@@ -12,7 +12,7 @@ public class PlayerController : MonoBehaviour
 	#region Variables
 
 	private float speed = 50.0f;
-	private float zBound = 4.8f;
+	private float zBound = 18.0f;
 	private float yBound = 10;
 
 	private Rigidbody playerRb;
