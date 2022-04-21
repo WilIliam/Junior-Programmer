@@ -12,8 +12,11 @@ public class SpawnManager : MonoBehaviour
 	#region Variables
 
 	private float spawnRange = 9.0f;
+	public int enemtCount;
+	public int waveNumber = 1;
 
 	public GameObject spawn;
+	public GameObject powerup;
 	#endregion
 
 	#region Unity Mehods
@@ -21,20 +24,37 @@ public class SpawnManager : MonoBehaviour
 	// Start is called before the first frame update
 	void Start()
 	{
-		Instantiate(spawn, GenerateSpawnPosition(), spawn.transform.rotation);
+		SpawnEnemyWave(waveNumber);
+		Instantiate(powerup, GenerateSpawnPosition(), powerup.transform.rotation);
 	}
 
 	// Update is called once per frame
 	void Update()
 	{
+		enemtCount = FindObjectsOfType<EnemyController>().Length;
 
+		if(enemtCount == 0)
+		{
+			waveNumber++;
+			SpawnEnemyWave(waveNumber);
+			Instantiate(powerup, GenerateSpawnPosition(), powerup.transform.rotation);
+		}
 	}
 
-	
+
 
 	#endregion
 
 	#region Class
+
+	void SpawnEnemyWave(int enemiesToSpawn)
+	{
+		for (int i = 0; i < enemiesToSpawn; i++)
+		{
+			Instantiate(spawn, GenerateSpawnPosition(), spawn.transform.rotation);
+
+		}
+	}
 
 	private Vector3 GenerateSpawnPosition()
 	{
