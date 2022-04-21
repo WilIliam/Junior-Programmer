@@ -1323,6 +1323,26 @@ PrefabInstance:
       propertyPath: speedometerText
       value: 
       objectReference: {fileID: 565453624}
+    - target: {fileID: 1120698496, guid: 09082afec7b5e824ca611a0cc3264bcd, type: 3}
+      propertyPath: allWheels.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 1120698496, guid: 09082afec7b5e824ca611a0cc3264bcd, type: 3}
+      propertyPath: allWheels.Array.data[0]
+      value: 
+      objectReference: {fileID: 1112810605}
+    - target: {fileID: 1120698496, guid: 09082afec7b5e824ca611a0cc3264bcd, type: 3}
+      propertyPath: allWheels.Array.data[1]
+      value: 
+      objectReference: {fileID: 418098079}
+    - target: {fileID: 1120698496, guid: 09082afec7b5e824ca611a0cc3264bcd, type: 3}
+      propertyPath: allWheels.Array.data[2]
+      value: 
+      objectReference: {fileID: 1958503565}
+    - target: {fileID: 1120698496, guid: 09082afec7b5e824ca611a0cc3264bcd, type: 3}
+      propertyPath: allWheels.Array.data[3]
+      value: 
+      objectReference: {fileID: 99221599}
     - target: {fileID: 2720045576004100963, guid: 09082afec7b5e824ca611a0cc3264bcd, type: 3}
       propertyPath: m_Enabled
       value: 0
